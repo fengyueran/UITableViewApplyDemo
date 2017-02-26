@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "DataSource.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) DataSource *dataSource;
 
 @end
 
@@ -16,12 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.dataSource = [[DataSource alloc]init];
+    self.tableView.dataSource = self.dataSource;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

@@ -15,6 +15,7 @@
 		8013CA411E62768300A24F18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8013CA3F1E62768300A24F18 /* LaunchScreen.storyboard */; };
 		8013CA4C1E62768300A24F18 /* UITableViewApplyDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA4B1E62768300A24F18 /* UITableViewApplyDemoTests.m */; };
 		8013CA571E62768300A24F18 /* UITableViewApplyDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA561E62768300A24F18 /* UITableViewApplyDemoUITests.m */; };
+		8013CA661E62771100A24F18 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA651E62771100A24F18 /* DataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		8013CA521E62768300A24F18 /* UITableViewApplyDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITableViewApplyDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8013CA561E62768300A24F18 /* UITableViewApplyDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITableViewApplyDemoUITests.m; sourceTree = "<group>"; };
 		8013CA581E62768300A24F18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8013CA641E62771100A24F18 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
+		8013CA651E62771100A24F18 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				8013CA351E62768300A24F18 /* AppDelegate.m */,
 				8013CA371E62768300A24F18 /* ViewController.h */,
 				8013CA381E62768300A24F18 /* ViewController.m */,
+				8013CA641E62771100A24F18 /* DataSource.h */,
+				8013CA651E62771100A24F18 /* DataSource.m */,
 				8013CA3A1E62768300A24F18 /* Main.storyboard */,
 				8013CA3D1E62768300A24F18 /* Assets.xcassets */,
 				8013CA3F1E62768300A24F18 /* LaunchScreen.storyboard */,
@@ -272,6 +277,7 @@
 			files = (
 				8013CA391E62768300A24F18 /* ViewController.m in Sources */,
 				8013CA361E62768300A24F18 /* AppDelegate.m in Sources */,
+				8013CA661E62771100A24F18 /* DataSource.m in Sources */,
 				8013CA331E62768300A24F18 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
