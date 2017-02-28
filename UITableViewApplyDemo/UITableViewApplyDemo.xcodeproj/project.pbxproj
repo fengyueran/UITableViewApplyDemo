@@ -16,6 +16,10 @@
 		8013CA4C1E62768300A24F18 /* UITableViewApplyDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA4B1E62768300A24F18 /* UITableViewApplyDemoTests.m */; };
 		8013CA571E62768300A24F18 /* UITableViewApplyDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA561E62768300A24F18 /* UITableViewApplyDemoUITests.m */; };
 		8013CA661E62771100A24F18 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA651E62771100A24F18 /* DataSource.m */; };
+		8013CA691E62792600A24F18 /* Car.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA681E62792600A24F18 /* Car.m */; };
+		8013CA6C1E627A2400A24F18 /* CarGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA6B1E627A2400A24F18 /* CarGroup.m */; };
+		8013CA6E1E646DA500A24F18 /* heroes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8013CA6D1E646DA500A24F18 /* heroes.plist */; };
+		8013CA711E646DF100A24F18 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA701E646DF100A24F18 /* Hero.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,13 @@
 		8013CA581E62768300A24F18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8013CA641E62771100A24F18 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
 		8013CA651E62771100A24F18 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
+		8013CA671E62792600A24F18 /* Car.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		8013CA681E62792600A24F18 /* Car.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Car.m; sourceTree = "<group>"; };
+		8013CA6A1E627A2400A24F18 /* CarGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarGroup.h; sourceTree = "<group>"; };
+		8013CA6B1E627A2400A24F18 /* CarGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarGroup.m; sourceTree = "<group>"; };
+		8013CA6D1E646DA500A24F18 /* heroes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = heroes.plist; sourceTree = "<group>"; };
+		8013CA6F1E646DF100A24F18 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
+		8013CA701E646DF100A24F18 /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +121,14 @@
 				8013CA381E62768300A24F18 /* ViewController.m */,
 				8013CA641E62771100A24F18 /* DataSource.h */,
 				8013CA651E62771100A24F18 /* DataSource.m */,
+				8013CA671E62792600A24F18 /* Car.h */,
+				8013CA681E62792600A24F18 /* Car.m */,
+				8013CA6A1E627A2400A24F18 /* CarGroup.h */,
+				8013CA6B1E627A2400A24F18 /* CarGroup.m */,
+				8013CA6F1E646DF100A24F18 /* Hero.h */,
+				8013CA701E646DF100A24F18 /* Hero.m */,
 				8013CA3A1E62768300A24F18 /* Main.storyboard */,
 				8013CA3D1E62768300A24F18 /* Assets.xcassets */,
-				8013CA3F1E62768300A24F18 /* LaunchScreen.storyboard */,
-				8013CA421E62768300A24F18 /* Info.plist */,
 				8013CA311E62768300A24F18 /* Supporting Files */,
 			);
 			path = UITableViewApplyDemo;
@@ -122,6 +137,9 @@
 		8013CA311E62768300A24F18 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8013CA6D1E646DA500A24F18 /* heroes.plist */,
+				8013CA421E62768300A24F18 /* Info.plist */,
+				8013CA3F1E62768300A24F18 /* LaunchScreen.storyboard */,
 				8013CA321E62768300A24F18 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -248,6 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8013CA6E1E646DA500A24F18 /* heroes.plist in Resources */,
 				8013CA411E62768300A24F18 /* LaunchScreen.storyboard in Resources */,
 				8013CA3E1E62768300A24F18 /* Assets.xcassets in Resources */,
 				8013CA3C1E62768300A24F18 /* Main.storyboard in Resources */,
@@ -275,10 +294,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8013CA6C1E627A2400A24F18 /* CarGroup.m in Sources */,
+				8013CA691E62792600A24F18 /* Car.m in Sources */,
 				8013CA391E62768300A24F18 /* ViewController.m in Sources */,
 				8013CA361E62768300A24F18 /* AppDelegate.m in Sources */,
 				8013CA661E62771100A24F18 /* DataSource.m in Sources */,
 				8013CA331E62768300A24F18 /* main.m in Sources */,
+				8013CA711E646DF100A24F18 /* Hero.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

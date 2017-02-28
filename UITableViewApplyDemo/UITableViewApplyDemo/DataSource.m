@@ -7,38 +7,50 @@
 //
 
 #import "DataSource.h"
+#import "CarGroup.h"
+#import "Car.h"
+#import "Hero.h"
+@interface DataSource ()
+
+@end
 
 @implementation DataSource
+
+
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSLog(@"1111");
-    return 3;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"22222222");
-    if (section == 0) {
-        return 1;
-    } else if (section == 1) {
-        return 2;
-    }
     return 1;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.data.count;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc]init];
-    cell.textLabel.text = @"mxh";
-    NSLog(@"33333333");
+    static NSString *ID = @"hero";
+    //离开tableview可视范围的cell被丢入缓存池，当需要创建cell的时候根据Cell标识从缓存池中取cell,从而避免了不停创建新的cell消耗内存。
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+    }
+   
+    Hero *hero = self.data[indexPath.row];
+    cell.textLabel.text = hero.name;
+    cell.imageView.image = [UIImage imageNamed:hero.icon];
+    cell.detailTextLabel.text = hero.intro;
     return cell;
 }
 
 //- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    return @"this head title";
+//    CarGroup *carGroup = self.groups[section];
+//    return carGroup.header;
 //}
-
+//
 //- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
-//    return @"this footer title";
+//    CarGroup *carGroup = self.groups[section];
+//    return carGroup.footer;
 //}
 
 @end

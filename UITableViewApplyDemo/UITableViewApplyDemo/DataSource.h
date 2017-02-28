@@ -10,5 +10,5 @@
 #import <UIKit/UIKit.h>
 
 @interface DataSource : NSObject<UITableViewDataSource>
-
+@property (strong, nonatomic) NSArray *data;
 @end
