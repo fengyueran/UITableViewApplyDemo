@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface DataSource : NSObject<UITableViewDataSource>
+@interface DataSource : NSObject<UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) NSArray *data;
 @end

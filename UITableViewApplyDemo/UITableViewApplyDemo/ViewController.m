@@ -40,9 +40,23 @@
     self.dataSource = [[DataSource alloc]init];
     self.tableView.dataSource = self.dataSource;
     self.dataSource.data = self.heroArr;
+    self.tableView.delegate = self.dataSource;
+    self.tableView.separatorColor = [UIColor blueColor];
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight = 80;
+   
     //注册某个标识对应的cell类型，当在缓存池找不到相应标识的cell就创建对应的默认类型的cell。
 //    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"hero"];
 }
 
+//- (void)viewDidLayoutSubviews {
+//    [super viewDidLayoutSubviews];
+//    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+//         [self.tableView setSeparatorInset:UIEdgeInsetsZero];
+//    }
+//    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+//        [self.tableView setLayoutMargins:UIEdgeInsetsZero];
+//    }
+//}
 
 @end

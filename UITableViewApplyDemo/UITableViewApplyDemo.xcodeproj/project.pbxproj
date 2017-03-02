@@ -117,16 +117,7 @@
 			children = (
 				8013CA341E62768300A24F18 /* AppDelegate.h */,
 				8013CA351E62768300A24F18 /* AppDelegate.m */,
-				8013CA371E62768300A24F18 /* ViewController.h */,
-				8013CA381E62768300A24F18 /* ViewController.m */,
-				8013CA641E62771100A24F18 /* DataSource.h */,
-				8013CA651E62771100A24F18 /* DataSource.m */,
-				8013CA671E62792600A24F18 /* Car.h */,
-				8013CA681E62792600A24F18 /* Car.m */,
-				8013CA6A1E627A2400A24F18 /* CarGroup.h */,
-				8013CA6B1E627A2400A24F18 /* CarGroup.m */,
-				8013CA6F1E646DF100A24F18 /* Hero.h */,
-				8013CA701E646DF100A24F18 /* Hero.m */,
+				8013CA721E68655900A24F18 /* Hero */,
 				8013CA3A1E62768300A24F18 /* Main.storyboard */,
 				8013CA3D1E62768300A24F18 /* Assets.xcassets */,
 				8013CA311E62768300A24F18 /* Supporting Files */,
@@ -161,6 +152,23 @@
 				8013CA581E62768300A24F18 /* Info.plist */,
 			);
 			path = UITableViewApplyDemoUITests;
+			sourceTree = "<group>";
+		};
+		8013CA721E68655900A24F18 /* Hero */ = {
+			isa = PBXGroup;
+			children = (
+				8013CA371E62768300A24F18 /* ViewController.h */,
+				8013CA381E62768300A24F18 /* ViewController.m */,
+				8013CA641E62771100A24F18 /* DataSource.h */,
+				8013CA651E62771100A24F18 /* DataSource.m */,
+				8013CA671E62792600A24F18 /* Car.h */,
+				8013CA681E62792600A24F18 /* Car.m */,
+				8013CA6A1E627A2400A24F18 /* CarGroup.h */,
+				8013CA6B1E627A2400A24F18 /* CarGroup.m */,
+				8013CA6F1E646DF100A24F18 /* Hero.h */,
+				8013CA701E646DF100A24F18 /* Hero.m */,
+			);
+			name = Hero;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -34,8 +34,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+        //设置cell选中背景
+        UIView *selectedBackgroundView = [[UIView alloc]init];
+        selectedBackgroundView.backgroundColor = [UIColor redColor];
+        cell.selectedBackgroundView = selectedBackgroundView;
+        //设置cell指示器
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.accessoryView = [[UISwitch alloc]init];
     }
-   
+
     Hero *hero = self.data[indexPath.row];
     cell.textLabel.text = hero.name;
     cell.imageView.image = [UIImage imageNamed:hero.icon];
@@ -51,6 +58,22 @@
 //- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
 //    CarGroup *carGroup = self.groups[section];
 //    return carGroup.footer;
+//}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"cell is selected");
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+     NSLog(@"cell is deselected");
+}
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (indexPath.row == 0) {
+//        return 50;
+//    }
+//    return 60;
 //}
 
 @end
