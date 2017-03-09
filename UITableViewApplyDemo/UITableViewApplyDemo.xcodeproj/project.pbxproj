@@ -20,6 +20,16 @@
 		8013CA6C1E627A2400A24F18 /* CarGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA6B1E627A2400A24F18 /* CarGroup.m */; };
 		8013CA6E1E646DA500A24F18 /* heroes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8013CA6D1E646DA500A24F18 /* heroes.plist */; };
 		8013CA711E646DF100A24F18 /* Hero.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA701E646DF100A24F18 /* Hero.m */; };
+		8013CA751E68668100A24F18 /* XHTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA741E68668100A24F18 /* XHTableViewController.m */; };
+		8013CA771E68695E00A24F18 /* tgs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8013CA761E68695E00A24F18 /* tgs.plist */; };
+		8013CA7A1E6869EA00A24F18 /* XHDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA791E6869EA00A24F18 /* XHDeal.m */; };
+		8013CA7F1E6DA45000A24F18 /* XHDealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA7D1E6DA45000A24F18 /* XHDealCell.m */; };
+		8013CA801E6DA45000A24F18 /* XHDealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8013CA7E1E6DA45000A24F18 /* XHDealCell.xib */; };
+		8013CA861E71985C00A24F18 /* XHWBTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA851E71985C00A24F18 /* XHWBTableViewController.m */; };
+		8013CA8B1E7199A000A24F18 /* XHStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA891E7199A000A24F18 /* XHStatusCell.m */; };
+		8013CA8C1E7199A000A24F18 /* XHStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8013CA8A1E7199A000A24F18 /* XHStatusCell.xib */; };
+		8013CA8E1E719B5100A24F18 /* status.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8013CA8D1E719B5100A24F18 /* status.plist */; };
+		8013CA911E719D2D00A24F18 /* XHStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8013CA901E719D2D00A24F18 /* XHStatus.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +75,22 @@
 		8013CA6D1E646DA500A24F18 /* heroes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = heroes.plist; sourceTree = "<group>"; };
 		8013CA6F1E646DF100A24F18 /* Hero.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hero.h; sourceTree = "<group>"; };
 		8013CA701E646DF100A24F18 /* Hero.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hero.m; sourceTree = "<group>"; };
+		8013CA731E68668100A24F18 /* XHTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHTableViewController.h; sourceTree = "<group>"; };
+		8013CA741E68668100A24F18 /* XHTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHTableViewController.m; sourceTree = "<group>"; };
+		8013CA761E68695E00A24F18 /* tgs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tgs.plist; sourceTree = "<group>"; };
+		8013CA781E6869EA00A24F18 /* XHDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDeal.h; sourceTree = "<group>"; };
+		8013CA791E6869EA00A24F18 /* XHDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDeal.m; sourceTree = "<group>"; };
+		8013CA7C1E6DA45000A24F18 /* XHDealCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHDealCell.h; sourceTree = "<group>"; };
+		8013CA7D1E6DA45000A24F18 /* XHDealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHDealCell.m; sourceTree = "<group>"; };
+		8013CA7E1E6DA45000A24F18 /* XHDealCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHDealCell.xib; sourceTree = "<group>"; };
+		8013CA841E71985C00A24F18 /* XHWBTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWBTableViewController.h; sourceTree = "<group>"; };
+		8013CA851E71985C00A24F18 /* XHWBTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWBTableViewController.m; sourceTree = "<group>"; };
+		8013CA881E7199A000A24F18 /* XHStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHStatusCell.h; sourceTree = "<group>"; };
+		8013CA891E7199A000A24F18 /* XHStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHStatusCell.m; sourceTree = "<group>"; };
+		8013CA8A1E7199A000A24F18 /* XHStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHStatusCell.xib; sourceTree = "<group>"; };
+		8013CA8D1E719B5100A24F18 /* status.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = status.plist; sourceTree = "<group>"; };
+		8013CA8F1E719D2D00A24F18 /* XHStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHStatus.h; sourceTree = "<group>"; };
+		8013CA901E719D2D00A24F18 /* XHStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHStatus.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +143,10 @@
 			children = (
 				8013CA341E62768300A24F18 /* AppDelegate.h */,
 				8013CA351E62768300A24F18 /* AppDelegate.m */,
-				8013CA721E68655900A24F18 /* Hero */,
+				8013CA871E7198CF00A24F18 /* CustomCell-HeightChange */,
+				8013CA7B1E68EF5F00A24F18 /* CustomCell-xib */,
+				8013CA721E68655900A24F18 /* Cell-System */,
 				8013CA3A1E62768300A24F18 /* Main.storyboard */,
-				8013CA3D1E62768300A24F18 /* Assets.xcassets */,
 				8013CA311E62768300A24F18 /* Supporting Files */,
 			);
 			path = UITableViewApplyDemo;
@@ -128,7 +155,7 @@
 		8013CA311E62768300A24F18 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8013CA6D1E646DA500A24F18 /* heroes.plist */,
+				8013CA3D1E62768300A24F18 /* Assets.xcassets */,
 				8013CA421E62768300A24F18 /* Info.plist */,
 				8013CA3F1E62768300A24F18 /* LaunchScreen.storyboard */,
 				8013CA321E62768300A24F18 /* main.m */,
@@ -154,9 +181,10 @@
 			path = UITableViewApplyDemoUITests;
 			sourceTree = "<group>";
 		};
-		8013CA721E68655900A24F18 /* Hero */ = {
+		8013CA721E68655900A24F18 /* Cell-System */ = {
 			isa = PBXGroup;
 			children = (
+				8013CA6D1E646DA500A24F18 /* heroes.plist */,
 				8013CA371E62768300A24F18 /* ViewController.h */,
 				8013CA381E62768300A24F18 /* ViewController.m */,
 				8013CA641E62771100A24F18 /* DataSource.h */,
@@ -168,7 +196,37 @@
 				8013CA6F1E646DF100A24F18 /* Hero.h */,
 				8013CA701E646DF100A24F18 /* Hero.m */,
 			);
-			name = Hero;
+			name = "Cell-System";
+			sourceTree = "<group>";
+		};
+		8013CA7B1E68EF5F00A24F18 /* CustomCell-xib */ = {
+			isa = PBXGroup;
+			children = (
+				8013CA731E68668100A24F18 /* XHTableViewController.h */,
+				8013CA741E68668100A24F18 /* XHTableViewController.m */,
+				8013CA781E6869EA00A24F18 /* XHDeal.h */,
+				8013CA791E6869EA00A24F18 /* XHDeal.m */,
+				8013CA7C1E6DA45000A24F18 /* XHDealCell.h */,
+				8013CA7D1E6DA45000A24F18 /* XHDealCell.m */,
+				8013CA7E1E6DA45000A24F18 /* XHDealCell.xib */,
+				8013CA761E68695E00A24F18 /* tgs.plist */,
+			);
+			name = "CustomCell-xib";
+			sourceTree = "<group>";
+		};
+		8013CA871E7198CF00A24F18 /* CustomCell-HeightChange */ = {
+			isa = PBXGroup;
+			children = (
+				8013CA8D1E719B5100A24F18 /* status.plist */,
+				8013CA841E71985C00A24F18 /* XHWBTableViewController.h */,
+				8013CA851E71985C00A24F18 /* XHWBTableViewController.m */,
+				8013CA881E7199A000A24F18 /* XHStatusCell.h */,
+				8013CA891E7199A000A24F18 /* XHStatusCell.m */,
+				8013CA8A1E7199A000A24F18 /* XHStatusCell.xib */,
+				8013CA8F1E719D2D00A24F18 /* XHStatus.h */,
+				8013CA901E719D2D00A24F18 /* XHStatus.m */,
+			);
+			name = "CustomCell-HeightChange";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,10 +332,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8013CA771E68695E00A24F18 /* tgs.plist in Resources */,
 				8013CA6E1E646DA500A24F18 /* heroes.plist in Resources */,
 				8013CA411E62768300A24F18 /* LaunchScreen.storyboard in Resources */,
 				8013CA3E1E62768300A24F18 /* Assets.xcassets in Resources */,
+				8013CA8E1E719B5100A24F18 /* status.plist in Resources */,
 				8013CA3C1E62768300A24F18 /* Main.storyboard in Resources */,
+				8013CA8C1E7199A000A24F18 /* XHStatusCell.xib in Resources */,
+				8013CA801E6DA45000A24F18 /* XHDealCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,11 +365,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8013CA6C1E627A2400A24F18 /* CarGroup.m in Sources */,
+				8013CA8B1E7199A000A24F18 /* XHStatusCell.m in Sources */,
+				8013CA7F1E6DA45000A24F18 /* XHDealCell.m in Sources */,
+				8013CA751E68668100A24F18 /* XHTableViewController.m in Sources */,
+				8013CA861E71985C00A24F18 /* XHWBTableViewController.m in Sources */,
 				8013CA691E62792600A24F18 /* Car.m in Sources */,
 				8013CA391E62768300A24F18 /* ViewController.m in Sources */,
 				8013CA361E62768300A24F18 /* AppDelegate.m in Sources */,
 				8013CA661E62771100A24F18 /* DataSource.m in Sources */,
 				8013CA331E62768300A24F18 /* main.m in Sources */,
+				8013CA911E719D2D00A24F18 /* XHStatus.m in Sources */,
+				8013CA7A1E6869EA00A24F18 /* XHDeal.m in Sources */,
 				8013CA711E646DF100A24F18 /* Hero.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -534,6 +602,7 @@
 				8013CA5D1E62768300A24F18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8013CA5E1E62768300A24F18 /* Build configuration list for PBXNativeTarget "UITableViewApplyDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +611,7 @@
 				8013CA601E62768300A24F18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8013CA611E62768300A24F18 /* Build configuration list for PBXNativeTarget "UITableViewApplyDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +620,7 @@
 				8013CA631E62768300A24F18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
