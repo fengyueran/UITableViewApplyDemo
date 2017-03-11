@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 @class XHStatus;
 @interface XHStatusCell : UITableViewCell
-//** <#注释#> */
+//** 微博数据模型 */
 @property (strong,nonatomic) XHStatus *status;
 + (instancetype)cellWithTableView:(UITableView *)tableView;
-
 @end

@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *vipView;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *pictureView;
-
 @end
 @implementation XHStatusCell
 
@@ -41,7 +40,16 @@
     self.pictureView.image = [UIImage imageNamed:status.picture];
     self.pictureView.hidden = !status.picture;
     self.contentLabel.text = status.text;
+    
+    //cell强制布局
+    [self layoutIfNeeded];
+    if (self.pictureView.hidden) {
+        status.cellHeight = CGRectGetMaxY(self.contentLabel.frame) + 10;
+    } else {
+        status.cellHeight = CGRectGetMaxY(self.pictureView.frame) + 10;
+    }
 }
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];

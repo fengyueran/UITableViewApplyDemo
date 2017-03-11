@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface XHStatus : NSObject
 
@@ -14,6 +15,7 @@
 @property (strong, nonatomic) NSString *text;
 @property (strong, nonatomic) NSString *icon;
 @property (strong, nonatomic) NSString *picture;
+@property (assign, nonatomic) CGFloat cellHeight;
 @property (assign, nonatomic, getter=isVip) BOOL vip;
 
 + (instancetype)statusWithDic:(NSDictionary *)dic;
