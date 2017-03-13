@@ -50,10 +50,10 @@
     }
 }
 
-
+//利用自动布局约束宽度算出的label高度不准确
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.contentLabel.preferredMaxLayoutWidth = [UIScreen mainScreen].bounds.size.width - 20;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
