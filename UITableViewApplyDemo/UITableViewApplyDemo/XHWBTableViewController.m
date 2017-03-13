@@ -15,22 +15,38 @@
 //** 每行的高度 */
 @property (strong,nonatomic) NSMutableDictionary *height;
 //** 数据模型数组 */
-@property (nonatomic, strong) NSArray *statusArr;
+@property (nonatomic, strong) NSMutableArray *statusArr;
+//** <#注释#> */
+@property (strong, nonatomic) UIBarButtonItem *addItem;
+@property (strong, nonatomic) UIBarButtonItem *removeItem;
 
 @end
 
 @implementation XHWBTableViewController
 
+- (UIBarButtonItem *)addItem {
+    if (!_addItem) {
+        _addItem = [[UIBarButtonItem alloc]initWithTitle:@"add" style:UIBarButtonItemStylePlain target:self action:@selector(add)];
+    }
+    return _addItem;
+}
+
+- (UIBarButtonItem *)removeItem {
+    if (!_removeItem) {
+        _removeItem = [[UIBarButtonItem alloc]initWithTitle:@"remove" style:UIBarButtonItemStylePlain target:self action:@selector(remove)];
+    }
+    return _removeItem;
+}
 - (NSMutableDictionary *)height {
     if (!_height) {
         _height = [NSMutableDictionary dictionary];
     }
     return _height;
 }
-- (NSArray *)statusArr {
+- (NSMutableArray *)statusArr {
     if (!_statusArr) {
         NSString *path = [[NSBundle mainBundle]pathForResource:@"status" ofType:@"plist"];
-        _statusArr = [NSArray arrayWithContentsOfFile:path];
+        _statusArr = [NSMutableArray arrayWithContentsOfFile:path];
         NSMutableArray *mutableArr = [NSMutableArray array];
         for (NSDictionary *dict in _statusArr) {
             XHStatus *status = [XHStatus statusWithDic:dict];
@@ -42,6 +58,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationItem setRightBarButtonItems:@[self.removeItem,self.addItem]];
 
 }
 
@@ -52,6 +69,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"==========%zd",self.statusArr.count);
     return self.statusArr.count;
 }
 
@@ -100,12 +118,31 @@
     return [self.height[@(indexPath.row)] doubleValue];
      */
     XHStatus *status = self.statusArr[indexPath.row];
-    NSLog(@"============%f",status.cellHeight);
     return status.cellHeight;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
+}
+
+- (void)add {
+    XHStatus *status = [[XHStatus alloc]init];
+    status.name = @"增加的数据";
+    [self.statusArr insertObject:status atIndex:0];
+    //手动刷新tableView,刷新所有需要显示的数据，浪费性能
+//    [self.tableView reloadData];
+    
+    //加入动画且手动刷新,insertRowsAtIndexPaths会reloadData
+    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationLeft];
+}
+
+- (void)remove {
+    [self.statusArr removeObjectAtIndex:0];
+    //手动刷新tableView
+//    [self.tableView reloadData];
+    
+    //加入动画且手动刷新,deleteRowsAtIndexPaths会reloadData
+    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationLeft];
 }
 
 @end
