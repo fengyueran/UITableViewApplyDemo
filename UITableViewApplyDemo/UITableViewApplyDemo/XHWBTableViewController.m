@@ -19,6 +19,8 @@
 //** <#注释#> */
 @property (strong, nonatomic) UIBarButtonItem *addItem;
 @property (strong, nonatomic) UIBarButtonItem *removeItem;
+@property (strong, nonatomic) UIBarButtonItem *updateItem;
+@property (strong, nonatomic) UIBarButtonItem *editItem;
 
 @end
 
@@ -36,6 +38,20 @@
         _removeItem = [[UIBarButtonItem alloc]initWithTitle:@"remove" style:UIBarButtonItemStylePlain target:self action:@selector(remove)];
     }
     return _removeItem;
+}
+
+- (UIBarButtonItem *)updateItem {
+    if (!_updateItem) {
+        _updateItem = [[UIBarButtonItem alloc]initWithTitle:@"update" style:UIBarButtonItemStylePlain target:self action:@selector(update)];
+    }
+    return _updateItem;
+}
+
+- (UIBarButtonItem *)editItem {
+    if (!_editItem) {
+        _editItem = [[UIBarButtonItem alloc]initWithTitle:@"edit" style:UIBarButtonItemStylePlain target:self action:@selector(edit)];
+    }
+    return _editItem;
 }
 - (NSMutableDictionary *)height {
     if (!_height) {
@@ -58,7 +74,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationItem setRightBarButtonItems:@[self.removeItem,self.addItem]];
+    [self.navigationItem setRightBarButtonItems:@[self.removeItem,self.addItem,self.updateItem,self.editItem]];
+    self.tableView.editing = YES;
 
 }
 
@@ -75,6 +92,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"000000000000");
     XHStatusCell *cell = [XHStatusCell cellWithTableView:tableView];
     cell.status = self.statusArr[indexPath.row];
     //此时cell还未显示，如果要布局则需要强制布局
@@ -121,19 +139,73 @@
     return status.cellHeight;
 }
 
+#pragma mark - UITableView delegate method
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
 }
 
-- (void)add {
-    XHStatus *status = [[XHStatus alloc]init];
-    status.name = @"增加的数据";
-    [self.statusArr insertObject:status atIndex:0];
-    //手动刷新tableView,刷新所有需要显示的数据，浪费性能
-//    [self.tableView reloadData];
+//左滑删除，添加该方法后cell左滑就会出现删除按钮(如果editingStyleForRowAtIndexPath方法返回的不是UITableViewCellEditingStyleDelete删除模式则不出现删除按钮)，用户点击了删除(或添加)就调用该方法
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleInsert) {//点击加号，插入行
+        NSLog(@"insert");
+    } else if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //删除模型
+        [self.statusArr removeObjectAtIndex:indexPath.row];
+        //刷新表格
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+    }
+}
+
+//设置cell编辑模式为什么模式(删除或添加)
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    /*
+    进入编辑模式时出现什么按钮
+    1.UITableViewCellEditingStyleInsert：+号按钮
+    2.UITableViewCellEditingStyleDelete：-号按钮
+    3.UITableViewCellEditingStyleInsert|UITableViewCellEditingStyleDelete:空心圆选择按钮
+     */
+    if (indexPath.row == 0) {
+        return UITableViewCellEditingStyleDelete;
+    } else if (indexPath.row == 1) {
+        return UITableViewCellEditingStyleInsert;
+    }
+    return UITableViewCellEditingStyleInsert|UITableViewCellEditingStyleDelete;
     
-    //加入动画且手动刷新,insertRowsAtIndexPaths会reloadData
-    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationLeft];
+}
+
+- (void)add {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"请输入信息" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    //添加按钮
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        NSString *name = [alert.textFields[0] text];
+        NSString *content = [alert.textFields[1] text];
+        //创建模型
+        XHStatus *status = [[XHStatus alloc]init];
+        status.name = name;
+        status.text = content;
+        [self.statusArr insertObject:status atIndex:0];
+        
+        //手动刷新tableView，刷新所有需要显示的数据，浪费性能
+        //    [self.tableView reloadData];
+        
+        //加入动画且手动刷新,insertRowsAtIndexPaths会调用数据方法numberOfRowsInSection(返回行数需和插入后的行数一致)等，只更新插入的row，性能较高。
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationLeft];
+   
+    }]];
+    
+    //添加输入框
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入名字";
+    }];
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"请输入内容";
+    }];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+     
 }
 
 - (void)remove {
@@ -141,8 +213,20 @@
     //手动刷新tableView
 //    [self.tableView reloadData];
     
-    //加入动画且手动刷新,deleteRowsAtIndexPaths会reloadData
+    //加入删除动画且手动刷新,deleteRowsAtIndexPaths会调用数据源方法numberOfRowsInSection(返回行数需和删除后的行数一致)，但不会调用cellForRowAtIndexPath方法，性能较高。
     [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationLeft];
+}
+
+- (void)update {
+    XHStatus *status = self.statusArr[0];
+    status.name = @"update";
+    //[self.tableView reloadData];
+    //加入动画且手动刷新,reloadRowsAtIndexPaths会调用数据源方法numberOfRowsInSection(返回行数需和删除后的行数一致)，只更新更改的row，不用全部刷新，性能较高。
+    [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationLeft];
+}
+
+- (void)edit {
+    self.tableView.editing = !self.tableView.editing;
 }
 
 @end
